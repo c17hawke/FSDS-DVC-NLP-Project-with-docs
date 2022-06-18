@@ -3,6 +3,7 @@ site_name: FSDS-DVC-NLP-Project-with-docs
 # defeine TOC or order of website-
 nav:
   - Home: index.md
+  - Data-prep-stage: data_prep.md
 
 site_author: Sunny Bhaveen Chandra
 site_description: >-

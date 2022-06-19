@@ -79,3 +79,27 @@ TypeError: 'coo_matrix' object is not subscriptable
 [2022-06-19 17:05:44,813: INFO: data_mgmt]: The output matrix saved at artifacts\features\test.pkl of shape: (7464, 2502)
 [2022-06-19 17:05:45,091: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
 
+[2022-06-19 17:06:07,897: INFO: stage_03_train]: 
+********************
+[2022-06-19 17:06:07,897: INFO: stage_03_train]: >>>>> stage Training started <<<<<
+[2022-06-19 17:06:07,900: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 17:06:07,902: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 17:06:07,902: INFO: common]: created directory at: artifacts\model
+[2022-06-19 17:06:07,923: INFO: stage_03_train]: input matrix size: (17536, 2502)
+[2022-06-19 17:06:07,923: INFO: stage_03_train]: X matrix size: (17536, 2500)
+[2022-06-19 17:06:07,923: INFO: stage_03_train]: Y matrix size or labels: (17536,)
+[2022-06-19 17:06:10,939: INFO: stage_03_train]: saved our model at: artifacts\model\model.pkl
+[2022-06-19 17:06:10,941: INFO: stage_03_train]: >>>>> stage Training completed!<<<<<
+
+[2022-06-19 17:07:56,979: INFO: stage_03_train]: 
+********************
+[2022-06-19 17:07:56,979: INFO: stage_03_train]: >>>>> stage Training started <<<<<
+[2022-06-19 17:07:56,982: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 17:07:56,984: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 17:07:56,984: INFO: common]: created directory at: artifacts\model
+[2022-06-19 17:07:56,995: INFO: stage_03_train]: input matrix size: (17536, 2502)
+[2022-06-19 17:07:56,995: INFO: stage_03_train]: X matrix size: (17536, 2500)
+[2022-06-19 17:07:56,995: INFO: stage_03_train]: Y matrix size or labels: (17536,)
+[2022-06-19 17:07:59,600: INFO: stage_03_train]: saved our model at: artifacts\model\model.pkl
+[2022-06-19 17:07:59,602: INFO: stage_03_train]: >>>>> stage Training completed!<<<<<
+

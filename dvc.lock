@@ -1,0 +1,39 @@
+schema: '2.0'
+stages:
+  data_preparation:
+    cmd: python src/stage_01_prepare_data.py
+    deps:
+    - path: data/data.xml
+      md5: a304afb96060aad90176268345e10355
+      size: 37891850
+    - path: src/stage_01_prepare_data.py
+      md5: c55a65d906c0f2ace98ca2da7554ac83
+      size: 2193
+    - path: src/utils
+      md5: 1738413ee4199465c77436909699188c.dir
+      size: 5924
+      nfiles: 6
+    outs:
+    - path: artifacts/prepared
+      md5: dc639257fd7e43c167de7349d66763c4.dir
+      size: 23886351
+      nfiles: 2
+  featurization:
+    cmd: python src/stage_02_featurization.py
+    deps:
+    - path: artifacts/prepared
+      md5: dc639257fd7e43c167de7349d66763c4.dir
+      size: 23886351
+      nfiles: 2
+    - path: src/stage_02_featurization.py
+      md5: 9d46040dd39d0beeac428287c7f39cb3
+      size: 3127
+    - path: src/utils
+      md5: 1738413ee4199465c77436909699188c.dir
+      size: 5924
+      nfiles: 6
+    outs:
+    - path: artifacts/features
+      md5: af4351c7e09a6dcc2c08f288d4288485.dir
+      size: 16229598
+      nfiles: 2

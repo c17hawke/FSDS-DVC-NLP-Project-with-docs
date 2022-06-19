@@ -1,68 +1,48 @@
-[2022-06-18 17:21:40,583: INFO: stage_01_prepare_data]: 
+[2022-06-19 16:37:50,934: INFO: stage_02_featurization]: 
 ********************
-[2022-06-18 17:21:40,583: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
-[2022-06-18 17:21:40,585: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2022-06-18 17:21:40,587: INFO: common]: yaml file: params.yaml loaded successfully
-[2022-06-18 17:21:40,587: INFO: common]: created directory at: artifacts\prepared
-[2022-06-18 17:21:43,963: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
-
-[2022-06-19 16:05:18,657: INFO: stage_01_prepare_data]: 
-********************
-[2022-06-19 16:05:18,657: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
-[2022-06-19 16:05:18,662: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2022-06-19 16:05:18,663: INFO: common]: yaml file: params.yaml loaded successfully
-[2022-06-19 16:05:18,664: INFO: common]: created directory at: artifacts\prepared
-[2022-06-19 16:05:22,268: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
-
-[2022-06-19 16:18:22,596: INFO: stage_01_prepare_data]: 
-********************
-[2022-06-19 16:18:22,596: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
-[2022-06-19 16:18:22,599: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2022-06-19 16:18:22,600: INFO: common]: yaml file: params.yaml loaded successfully
-[2022-06-19 16:18:22,600: INFO: common]: created directory at: artifacts\prepared
-[2022-06-19 16:18:25,420: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
-
-[2022-06-19 16:19:16,815: INFO: stage_02_featurization]: 
-********************
-[2022-06-19 16:19:16,815: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
-[2022-06-19 16:19:16,819: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2022-06-19 16:19:16,821: INFO: common]: yaml file: params.yaml loaded successfully
-[2022-06-19 16:19:16,821: INFO: common]: created directory at: artifacts\features
-[2022-06-19 16:19:17,027: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17537, 3) is read.
-[2022-06-19 16:19:17,027: ERROR: stage_02_featurization]: 'DataFrame' object has no attribute 'text'
+[2022-06-19 16:37:50,934: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-19 16:37:50,937: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 16:37:50,939: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 16:37:50,939: INFO: common]: created directory at: artifacts\features
+[2022-06-19 16:37:51,160: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17536, 3) is read.
+[2022-06-19 16:38:02,286: INFO: data_mgmt]: The output matrix saved at artifacts\features\train.pkl of shape: (17536, 2502)
+[2022-06-19 16:38:02,383: INFO: common]: The input data frame artifacts\prepared\test.tsv of size (7464, 3) is read.
+[2022-06-19 16:38:04,257: ERROR: stage_02_featurization]: save_matrix() got an unexpected keyword argument 'matrix'
 Traceback (most recent call last):
   File "src/stage_02_featurization.py", line 76, in <module>
     main(config_path=parsed_args.config, params_path=parsed_args.params)
-  File "src/stage_02_featurization.py", line 41, in main
-    train_words = np.array(df_train.text.str.lower().values.astype("U"))
-  File "F:\LIVE_CLASS\FSDS_FEB\codebase\FSDS-DVC-NLP-Project-with-docs\env\lib\site-packages\pandas\core\generic.py", line 5575, in __getattr__
-    return object.__getattribute__(self, name)
-AttributeError: 'DataFrame' object has no attribute 'text'
-[2022-06-19 16:22:02,717: INFO: stage_02_featurization]: 
+  File "src/stage_02_featurization.py", line 64, in main
+    save_matrix(df=df_test, matrix=test_words_tfidf_matrix, out_path=featurized_test_data_path)
+TypeError: save_matrix() got an unexpected keyword argument 'matrix'
+[2022-06-19 16:38:28,422: INFO: stage_02_featurization]: 
 ********************
-[2022-06-19 16:22:02,717: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
-[2022-06-19 16:22:02,720: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2022-06-19 16:22:02,721: INFO: common]: yaml file: params.yaml loaded successfully
-[2022-06-19 16:22:02,721: INFO: common]: created directory at: artifacts\features
-[2022-06-19 16:22:02,927: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17536, 3) is read.
-[2022-06-19 16:22:14,152: ERROR: stage_02_featurization]: 'DataFrame' object has no attribute 'id'
-Traceback (most recent call last):
-  File "src/stage_02_featurization.py", line 76, in <module>
-    main(config_path=parsed_args.config, params_path=parsed_args.params)
-  File "src/stage_02_featurization.py", line 56, in main
-    save_matrix(df=df_train, matrix=train_words_tfidf_matrix, out_path=featurized_train_data_path)
-  File "f:\live_class\fsds_feb\codebase\fsds-dvc-nlp-project-with-docs\src\utils\data_mgmt.py", line 33, in save_matrix
-    id_matrix = df.id
-  File "F:\LIVE_CLASS\FSDS_FEB\codebase\FSDS-DVC-NLP-Project-with-docs\env\lib\site-packages\pandas\core\generic.py", line 5575, in __getattr__
-    return object.__getattribute__(self, name)
-AttributeError: 'DataFrame' object has no attribute 'id'
-[2022-06-19 16:22:52,246: INFO: stage_02_featurization]: 
+[2022-06-19 16:38:28,422: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-19 16:38:28,428: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 16:38:28,429: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 16:38:28,430: INFO: common]: created directory at: artifacts\features
+[2022-06-19 16:38:28,681: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17536, 3) is read.
+[2022-06-19 16:38:40,792: INFO: data_mgmt]: The output matrix saved at artifacts\features\train.pkl of shape: (17536, 2502)
+[2022-06-19 16:38:40,884: INFO: common]: The input data frame artifacts\prepared\test.tsv of size (7464, 3) is read.
+[2022-06-19 16:38:42,754: INFO: data_mgmt]: The output matrix saved at artifacts\features\test.pkl of shape: (7464, 2502)
+[2022-06-19 16:38:43,017: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
+
+[2022-06-19 16:45:44,652: INFO: stage_01_prepare_data]: 
 ********************
-[2022-06-19 16:22:52,247: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
-[2022-06-19 16:22:52,250: INFO: common]: yaml file: configs/config.yaml loaded successfully
-[2022-06-19 16:22:52,251: INFO: common]: yaml file: params.yaml loaded successfully
-[2022-06-19 16:22:52,252: INFO: common]: created directory at: artifacts\features
-[2022-06-19 16:22:52,448: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17536, 3) is read.
-[2022-06-19 16:23:03,612: INFO: common]: The input data frame artifacts\prepared\test.tsv of size (7464, 3) is read.
-[2022-06-19 16:23:05,709: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
+[2022-06-19 16:45:44,652: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
+[2022-06-19 16:45:44,655: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 16:45:44,656: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 16:45:44,657: INFO: common]: created directory at: artifacts\prepared
+[2022-06-19 16:45:47,372: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
+
+[2022-06-19 16:45:51,002: INFO: stage_02_featurization]: 
+********************
+[2022-06-19 16:45:51,002: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-19 16:45:51,006: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 16:45:51,007: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 16:45:51,008: INFO: common]: created directory at: artifacts\features
+[2022-06-19 16:45:51,944: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17536, 3) is read.
+[2022-06-19 16:46:03,629: INFO: data_mgmt]: The output matrix saved at artifacts\features\train.pkl of shape: (17536, 2502)
+[2022-06-19 16:46:04,061: INFO: common]: The input data frame artifacts\prepared\test.tsv of size (7464, 3) is read.
+[2022-06-19 16:46:05,928: INFO: data_mgmt]: The output matrix saved at artifacts\features\test.pkl of shape: (7464, 2502)
+[2022-06-19 16:46:06,204: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
 

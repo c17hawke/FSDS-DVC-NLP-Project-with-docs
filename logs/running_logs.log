@@ -1,0 +1,68 @@
+[2022-06-18 17:21:40,583: INFO: stage_01_prepare_data]: 
+********************
+[2022-06-18 17:21:40,583: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
+[2022-06-18 17:21:40,585: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-18 17:21:40,587: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-18 17:21:40,587: INFO: common]: created directory at: artifacts\prepared
+[2022-06-18 17:21:43,963: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
+
+[2022-06-19 16:05:18,657: INFO: stage_01_prepare_data]: 
+********************
+[2022-06-19 16:05:18,657: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
+[2022-06-19 16:05:18,662: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 16:05:18,663: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 16:05:18,664: INFO: common]: created directory at: artifacts\prepared
+[2022-06-19 16:05:22,268: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
+
+[2022-06-19 16:18:22,596: INFO: stage_01_prepare_data]: 
+********************
+[2022-06-19 16:18:22,596: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data started <<<<<
+[2022-06-19 16:18:22,599: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 16:18:22,600: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 16:18:22,600: INFO: common]: created directory at: artifacts\prepared
+[2022-06-19 16:18:25,420: INFO: stage_01_prepare_data]: >>>>> stage Prepare_data completed!<<<<<
+
+[2022-06-19 16:19:16,815: INFO: stage_02_featurization]: 
+********************
+[2022-06-19 16:19:16,815: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-19 16:19:16,819: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 16:19:16,821: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 16:19:16,821: INFO: common]: created directory at: artifacts\features
+[2022-06-19 16:19:17,027: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17537, 3) is read.
+[2022-06-19 16:19:17,027: ERROR: stage_02_featurization]: 'DataFrame' object has no attribute 'text'
+Traceback (most recent call last):
+  File "src/stage_02_featurization.py", line 76, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_featurization.py", line 41, in main
+    train_words = np.array(df_train.text.str.lower().values.astype("U"))
+  File "F:\LIVE_CLASS\FSDS_FEB\codebase\FSDS-DVC-NLP-Project-with-docs\env\lib\site-packages\pandas\core\generic.py", line 5575, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'text'
+[2022-06-19 16:22:02,717: INFO: stage_02_featurization]: 
+********************
+[2022-06-19 16:22:02,717: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-19 16:22:02,720: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 16:22:02,721: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 16:22:02,721: INFO: common]: created directory at: artifacts\features
+[2022-06-19 16:22:02,927: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17536, 3) is read.
+[2022-06-19 16:22:14,152: ERROR: stage_02_featurization]: 'DataFrame' object has no attribute 'id'
+Traceback (most recent call last):
+  File "src/stage_02_featurization.py", line 76, in <module>
+    main(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_featurization.py", line 56, in main
+    save_matrix(df=df_train, matrix=train_words_tfidf_matrix, out_path=featurized_train_data_path)
+  File "f:\live_class\fsds_feb\codebase\fsds-dvc-nlp-project-with-docs\src\utils\data_mgmt.py", line 33, in save_matrix
+    id_matrix = df.id
+  File "F:\LIVE_CLASS\FSDS_FEB\codebase\FSDS-DVC-NLP-Project-with-docs\env\lib\site-packages\pandas\core\generic.py", line 5575, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'id'
+[2022-06-19 16:22:52,246: INFO: stage_02_featurization]: 
+********************
+[2022-06-19 16:22:52,247: INFO: stage_02_featurization]: >>>>> stage Featurization started <<<<<
+[2022-06-19 16:22:52,250: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 16:22:52,251: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 16:22:52,252: INFO: common]: created directory at: artifacts\features
+[2022-06-19 16:22:52,448: INFO: common]: The input data frame artifacts\prepared\train.tsv of size (17536, 3) is read.
+[2022-06-19 16:23:03,612: INFO: common]: The input data frame artifacts\prepared\test.tsv of size (7464, 3) is read.
+[2022-06-19 16:23:05,709: INFO: stage_02_featurization]: >>>>> stage Featurization completed!<<<<<
+

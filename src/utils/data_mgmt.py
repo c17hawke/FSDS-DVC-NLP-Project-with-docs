@@ -35,7 +35,7 @@ def save_matrix(df, text_matrix, out_path):
     pid_matrix = sparse.csr_matrix(df.pid.astype(np.int64)).T
     label_matrix = sparse.csr_matrix(df.label.astype(np.int64)).T
 
-    result = sparse.hstack([pid_matrix, label_matrix, text_matrix])
+    result = sparse.hstack([pid_matrix, label_matrix, text_matrix], format="csr")
 
     msg = f"The output matrix saved at {out_path} of shape: {result.shape}"
     logging.info(msg)

@@ -7,3 +7,9 @@ prepare:
 featurize:
   max_features: 2500
   n_grams: 2
+
+train:
+  seed: 2022
+  n_est: 100
+  min_split: 16
+  n_jobs: 2

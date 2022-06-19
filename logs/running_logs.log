@@ -103,3 +103,71 @@ TypeError: 'coo_matrix' object is not subscriptable
 [2022-06-19 17:07:59,600: INFO: stage_03_train]: saved our model at: artifacts\model\model.pkl
 [2022-06-19 17:07:59,602: INFO: stage_03_train]: >>>>> stage Training completed!<<<<<
 
+[2022-06-19 17:32:28,951: INFO: stage_04_evaluate]: 
+********************
+[2022-06-19 17:32:28,951: INFO: stage_04_evaluate]: >>>>> stage Evaluation started <<<<<
+[2022-06-19 17:32:28,955: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 17:32:28,957: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 17:32:29,240: INFO: stage_04_evaluate]: >>>>> stage Evaluation completed!<<<<<
+
+[2022-06-19 17:34:02,930: INFO: stage_04_evaluate]: 
+********************
+[2022-06-19 17:34:02,930: INFO: stage_04_evaluate]: >>>>> stage Evaluation started <<<<<
+[2022-06-19 17:34:02,932: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 17:34:02,934: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 17:34:03,204: INFO: stage_04_evaluate]: >>>>> stage Evaluation completed!<<<<<
+
+[2022-06-19 17:34:28,829: INFO: stage_04_evaluate]: 
+********************
+[2022-06-19 17:34:28,829: INFO: stage_04_evaluate]: >>>>> stage Evaluation started <<<<<
+[2022-06-19 17:34:28,832: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 17:34:28,834: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 17:34:29,108: INFO: stage_04_evaluate]: >>>>> stage Evaluation completed!<<<<<
+
+[2022-06-19 17:34:53,265: INFO: stage_04_evaluate]: 
+********************
+[2022-06-19 17:34:53,266: INFO: stage_04_evaluate]: >>>>> stage Evaluation started <<<<<
+[2022-06-19 17:34:53,268: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 17:34:53,270: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 17:34:53,546: INFO: stage_04_evaluate]: >>>>> stage Evaluation completed!<<<<<
+
+[2022-06-19 17:38:29,132: INFO: stage_04_evaluate]: 
+********************
+[2022-06-19 17:38:29,133: INFO: stage_04_evaluate]: >>>>> stage Evaluation started <<<<<
+[2022-06-19 17:38:29,136: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 17:38:29,138: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 17:38:29,445: INFO: common]: json file saved at: scores.json
+[2022-06-19 17:38:29,446: INFO: stage_04_evaluate]: >>>>> stage Evaluation completed!<<<<<
+
+[2022-06-19 17:50:22,653: INFO: stage_04_evaluate]: 
+********************
+[2022-06-19 17:50:22,653: INFO: stage_04_evaluate]: >>>>> stage Evaluation started <<<<<
+[2022-06-19 17:50:22,656: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 17:50:22,659: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 17:50:22,929: INFO: common]: json file saved at: scores.json
+[2022-06-19 17:50:22,931: INFO: common]: json file saved at: prc.json
+[2022-06-19 17:50:22,933: INFO: common]: json file saved at: roc.json
+[2022-06-19 17:50:22,935: INFO: stage_04_evaluate]: >>>>> stage Evaluation completed!<<<<<
+
+[2022-06-19 17:55:24,207: INFO: stage_03_train]: 
+********************
+[2022-06-19 17:55:24,207: INFO: stage_03_train]: >>>>> stage Training started <<<<<
+[2022-06-19 17:55:24,210: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 17:55:24,212: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 17:55:24,212: INFO: common]: created directory at: artifacts\model
+[2022-06-19 17:55:24,224: INFO: stage_03_train]: input matrix size: (17536, 2502)
+[2022-06-19 17:55:24,224: INFO: stage_03_train]: X matrix size: (17536, 2500)
+[2022-06-19 17:55:24,224: INFO: stage_03_train]: Y matrix size or labels: (17536,)
+[2022-06-19 17:55:26,833: INFO: stage_03_train]: saved our model at: artifacts\model\model.pkl
+[2022-06-19 17:55:26,835: INFO: stage_03_train]: >>>>> stage Training completed!<<<<<
+
+[2022-06-19 17:55:29,574: INFO: stage_04_evaluate]: 
+********************
+[2022-06-19 17:55:29,574: INFO: stage_04_evaluate]: >>>>> stage Evaluation started <<<<<
+[2022-06-19 17:55:29,577: INFO: common]: yaml file: configs/config.yaml loaded successfully
+[2022-06-19 17:55:29,578: INFO: common]: yaml file: params.yaml loaded successfully
+[2022-06-19 17:55:29,878: INFO: common]: json file saved at: scores.json
+[2022-06-19 17:55:29,880: INFO: common]: json file saved at: prc.json
+[2022-06-19 17:55:29,882: INFO: common]: json file saved at: roc.json
+[2022-06-19 17:55:29,884: INFO: stage_04_evaluate]: >>>>> stage Evaluation completed!<<<<<
+

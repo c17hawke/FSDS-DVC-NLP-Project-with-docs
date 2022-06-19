@@ -53,7 +53,7 @@ def main(config_path, params_path):
     tfidf.fit(train_words_binary_matrix)
     train_words_tfidf_matrix = tfidf.transform(train_words_binary_matrix)
     # call a function to save this matrix
-    save_matrix(df=df_train, matrix=train_words_tfidf_matrix, out_path=featurized_train_data_path)
+    save_matrix(df=df_train, text_matrix=train_words_tfidf_matrix, out_path=featurized_train_data_path)
 
     # for test data
     df_test = get_df(test_data_path)
@@ -61,7 +61,7 @@ def main(config_path, params_path):
     test_words_binary_matrix = bag_of_words.transform(test_words)
     test_words_tfidf_matrix = tfidf.transform(test_words_binary_matrix)
     # call a function to save this matrix
-    save_matrix(df=df_test, matrix=test_words_tfidf_matrix, out_path=featurized_test_data_path)
+    save_matrix(df=df_test, text_matrix=test_words_tfidf_matrix, out_path=featurized_test_data_path)
     
 
 if __name__ == '__main__':

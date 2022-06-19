@@ -4,6 +4,8 @@ import random
 import xml.etree.ElementTree as ET
 import re
 import joblib
+import numpy as np
+import scipy.sparse as sparse
 
 def process_posts(fd_in, fd_out_train, fd_out_test, target_tag, split):
     line_num = 1
@@ -29,6 +31,14 @@ def process_posts(fd_in, fd_out_train, fd_out_test, target_tag, split):
             logging.exception(msg)
 
 
-def save_matrix(df, matrix, out_path):
-    id_matrix = df.pid
+def save_matrix(df, text_matrix, out_path):
+    pid_matrix = sparse.csr_matrix(df.pid.astype(np.int64)).T
+    label_matrix = sparse.csr_matrix(df.label.astype(np.int64)).T
+
+    result = sparse.hstack([pid_matrix, label_matrix, text_matrix])
+
+    msg = f"The output matrix saved at {out_path} of shape: {result.shape}"
+    logging.info(msg)
+    joblib.dump(result, out_path) 
+
 

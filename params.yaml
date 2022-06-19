@@ -5,8 +5,8 @@ prepare:
   tag: <python>
 
 featurize:
-  max_features: 2500
-  n_grams: 2
+  max_features: 3000
+  n_grams: 3
 
 train:
   seed: 2022
